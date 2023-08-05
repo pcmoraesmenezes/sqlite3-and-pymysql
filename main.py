@@ -77,7 +77,7 @@ cursor.executemany(
     [
         {
             'nome': 'Paulo César',
-            'peso': 63.89
+            'peso': 65.89
         },
 
         {

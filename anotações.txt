@@ -1,3 +1,6 @@
 sqlite não é bom para trabalhar com muitas conexões ao mesmo tempo
 Mas ele é muito bom para ser uma base de dados para aplicativos que salvam com
 backup, base de dados que se salva uma vez.
+
+CRUD = CREATE READ UPDATE DELETE 
+SQL = INSERT SELECT UPDATE DELETE
