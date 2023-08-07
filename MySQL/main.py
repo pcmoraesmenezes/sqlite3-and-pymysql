@@ -110,5 +110,8 @@ cursor.executemany(sql_many,
                    ])
 connection.commit()
 
+# Ler valores com SELECT
+cursor.execute(f'SELECT id, nome, idade FROM {TABLE_NAME}')
+
 cursor.close()
 connection.close()
