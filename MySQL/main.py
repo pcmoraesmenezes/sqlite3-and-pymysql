@@ -65,5 +65,50 @@ sql_with_dict = (
 cursor.execute(sql_with_dict, data_with_dict)
 connection.commit()
 
+# Execução de um comando varias vezes:
+
+many_data = (
+    {
+        "name": "Vitor Ruba", "age": 23
+    },
+    {
+        "name": "João Paulo", "age": 27
+    },
+    {
+        "name": "Ygor", "age": 22
+    },
+)
+
+sql_many = (
+    f'INSERT INTO {TABLE_NAME} '
+    '(name, age) '
+    'VALUES '
+    '(%(name)s, %(age)s) '
+)
+
+tuple_of_tuple = (
+    ("Brancudo - White ", 21, ),
+    ("Felipe - Dylon", 20, ),
+    ("Rafael Fort", 20, )
+)
+
+cursor.executemany(sql_many, many_data)
+cursor.executemany(sql, tuple_of_tuple)
+cursor.executemany(sql_many,
+                   [
+                       {
+                           "name": "Medina",
+                           "age": 20,
+                       },
+                       {
+                            "name": "VInicius",
+                            "age": 20
+                       },
+                       {
+                           "name": "Samuca", "age": 22
+                       }
+                   ])
+connection.commit()
+
 cursor.close()
 connection.close()
