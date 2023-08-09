@@ -75,5 +75,29 @@ if result:
     print('NAME ID 4 :', result[0])
     print('AGE OF RICKSON_JOVEM:', result[1])
     print('ID OF JOÃO PAULO:', result[2])
+
+#  metodo scroll e sua aplicação
+
+cursor.execute(
+    f'SELECT * FROM {TABLE_NAME}'
+)
+
+print()
+
+for row in cursor.fetchall():
+    print(row)
+
+print()
+
+# for row in cursor.fetchall():  Note que é esgotado, não é possivel percorrer
+# novamente
+#     print(row)
+
+cursor.scroll(0, 'absolute')
+# agora irá funcionar
+
+for row in cursor.fetchall():
+    print(row)
+
 cursor.close()
 connection.close()
